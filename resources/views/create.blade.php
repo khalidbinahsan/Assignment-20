@@ -25,27 +25,31 @@
                     <div class="card-header">
                         <div class="card-title">Insert details</div>
                     </div> <!--end::Header--> <!--begin::Form-->
-                    <form> <!--begin::Body-->
+                    <form action="{{ url('/products') }}" method="POST"> <!--begin::Body-->
                         <div class="card-body">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Product Name</label>
-                                <input type="text" class="form-control" id="name">
+                                <input type="text" class="form-control" id="name" name="name">
                             </div>
                             <div class="mb-3">
                                 <label for="des" class="form-label">Product Description</label>
-                                <textarea class="form-control" id="des"></textarea>
+                                <textarea class="form-control" id="des" name="description"></textarea>
                             </div>
                             <div class="mb-3">
-                                <label for="name" class="form-label">Product Name</label>
-                                <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+                                <label for="product-id" class="form-label">Product ID</label>
+                                <input type="text" class="form-control" id="product-id" name="product_id">
                             </div>
                             <div class="mb-3">
-                                <label for="name" class="form-label">Product Name</label>
-                                <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+                                <label for="price" class="form-label">Product price</label>
+                                <input type="text" class="form-control" id="price" name="price">
                             </div>
                             <div class="mb-3">
-                                <label for="name" class="form-label">Product Name</label>
-                                <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+                                <label for="stock" class="form-label">Product Stock</label>
+                                <input type="text" class="form-control" id="stock" name="stock">
+                            </div>
+                            <div class="mb-3">
+                                <label for="image" class="form-label">Product Image Url</label>
+                                <input type="text" class="form-control" id="image" name="image">
                             </div>
                         </div> <!--end::Body--> <!--begin::Footer-->
                         <div class="card-footer"> <button type="submit" class="btn btn-primary">Submit</button> </div> <!--end::Footer-->
