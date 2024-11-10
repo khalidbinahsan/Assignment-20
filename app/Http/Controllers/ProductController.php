@@ -18,14 +18,17 @@ class ProductController extends Controller
         $result = Product::create($request->input());
         return redirect('/products')->with('success', 'Product added successfully!');
     }
-    function showProduct(){
-
+    function showProduct(Request $request){
+            $product = Product::where('id', $request->id)->first();
+            return view('show', ['item'=>$product]);
     }
-    function editProduct(){
-
+    function editProduct(Request $request){
+        $product = Product::where('id', $request->id)->first();
+        return view('edit', ['item'=>$product]);
     }
-    function updateProduct(){
-
+    function updateProduct(Request $request){
+        Product::where('id', $request->id)->update($request->only(['name', 'description', 'product_id', 'price', 'stock', 'image']));
+        return redirect('/products')->with('success', 'Product updated successfully!');
     }
     function deleteProduct(Request $request){
         $result = Product::where('id', $request->id)->delete();

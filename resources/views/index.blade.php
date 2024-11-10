@@ -53,8 +53,8 @@
                                     <td>{{ $product['product_id'] }}</td>
                                     <td>{{ $product['price'] }}</td>
                                     <td class="d-flex gap-2">
-                                        <a href="#" class="btn btn-info">View</a>
-                                        <a href="#" class="btn btn-primary">Edit</a>
+                                        <a href="{{ url('/products/'.$product['id']) }}" class="btn btn-info">View</a>
+                                        <a href="{{ url('/products/'.$product['id'].'/edit') }}" class="btn btn-primary">Edit</a>
                                         <form action="{{ url('/products/'.$product['id']) }}" method="POST">
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger">Delete</button>
